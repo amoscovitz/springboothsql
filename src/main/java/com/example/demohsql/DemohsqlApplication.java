@@ -31,7 +31,7 @@ public class DemohsqlApplication {
 	
 	@PostMapping("/create")
     public String post(@RequestBody Book book) {
-      return String.format("Created fake %s",(book != null)? book.toString():"No book");
+      return String.format("Created fake %s.",(book != null)? book.toString():"No book");
     }
 
 }
