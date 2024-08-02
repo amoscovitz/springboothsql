@@ -31,9 +31,9 @@ public class DemohsqlApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemohsqlApplication.class, args);
 	}
-	
+
 	@PostConstruct
-    public void postConstruct() {
+	public void postConstruct() {
 		Date d = new Date(123); 
 		bookRepository.save(new Book("mytitle", "john",d));
 		System.out.println("Book added");
