@@ -16,22 +16,22 @@ import com.example.demohsql.service.BookService;
 @SpringBootApplication
 @RestController
 public class DemohsqlApplication {
-	
+
 	@Autowired
 	private BookService bookService;
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(DemohsqlApplication.class, args);
 	}
 
 	@GetMapping("/get")
-    public String get(@RequestParam(value = "name", defaultValue = "World") String name) {		
-      return String.format("Get %s!",bookService.findAllBooks());
-    }
-	
+	public String get(@RequestParam(value = "name", defaultValue = "World") String name) {		
+		return String.format("Get %s!",bookService.findAllBooks());
+	}
+
 	@PostMapping("/create")
-    public String post(@RequestBody Book book) {
-      return String.format("Created fake %s.",(book != null)? book.toString():"No book");
-    }
+	public String post(@RequestBody Book book) {
+		return String.format("Created fake %s.",(book != null)? book.toString():"No book");
+	}
 
 }
